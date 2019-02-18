@@ -361,6 +361,10 @@ var _isOpen,
 	},
 
 	_onKeyDown = function(e) {
+		if (e.defaultPrevented) {
+			return
+		}
+
 		var keydownAction = '';
 		if(_options.escKey && e.keyCode === 27) { 
 			keydownAction = 'close';
